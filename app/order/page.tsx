@@ -16,11 +16,12 @@ type MenuItem = {
 };
 
 const MENU: MenuItem[] = [
+  // ---------------- Chinese Starters ----------------
   {
     id: "chilli_chicken",
     name: "Chilli Chicken (Boneless)",
     desc: "Spicy Chinese style chicken with Holi punch 🔥",
-    img: "https://via.placeholder.com/700x450.png?text=Chilli+Chicken",
+    img: "/images/food/tbk_chilly_chicken.png",
     category: "Starters",
     subCategory: "Chinese Starters",
     price: 179,
@@ -29,27 +30,29 @@ const MENU: MenuItem[] = [
     id: "chicken_pakoda",
     name: "Chicken Pakoda (Boneless)",
     desc: "Crispy pakoda perfect for Holi munching 🤤",
-    img: "https://via.placeholder.com/700x450.png?text=Chicken+Pakoda",
+    img: "/images/food/tbk_chicken-pakoda.jpg",
     category: "Starters",
     subCategory: "Chinese Starters",
     price: 159,
   },
+
+  // ---------------- Indian Starters ----------------
   {
     id: "tandoori_chicken",
     name: "Tandoori Chicken",
     desc: "Smoky juicy tandoori flavour 😍",
-    img: "https://via.placeholder.com/700x450.png?text=Tandoori+Chicken",
+    img: "/images/food/tbk_tandoori_chicken.png",
     category: "Starters",
     subCategory: "Indian Starters",
     price: 299,
   },
 
-  // Momos
+  // ---------------- Momos ----------------
   {
     id: "steam_momos_5",
     name: "Chicken Steam Momos (5 pcs)",
-    desc: "Reddish spicy momos with chutney 🥟🔥",
-    img: "https://via.placeholder.com/700x450.png?text=Steam+Momos+5pcs",
+    desc: "Soft reddish steam momos with chutney 🥟🔥",
+    img: "/images/food/tbk_chilly_chicken.png",
     category: "Momos",
     subCategory: "Chicken Steam Momos",
     price: 79,
@@ -57,8 +60,8 @@ const MENU: MenuItem[] = [
   {
     id: "steam_momos_10",
     name: "Chicken Steam Momos (10 pcs)",
-    desc: "Big plate of steam momos for Holi party 😈",
-    img: "https://via.placeholder.com/700x450.png?text=Steam+Momos+10pcs",
+    desc: "Big plate of steam momos for Holi party 😈🥟",
+    img: "/images/food/tbk_chilly_chicken.png",
     category: "Momos",
     subCategory: "Chicken Steam Momos",
     price: 149,
@@ -67,7 +70,7 @@ const MENU: MenuItem[] = [
     id: "fried_momos_5",
     name: "Chicken Fried Momos (5 pcs)",
     desc: "Crispy reddish fried momos 🤤🔥",
-    img: "https://via.placeholder.com/700x450.png?text=Fried+Momos+5pcs",
+    img: "/images/food/tbk_chilly_chicken.png",
     category: "Momos",
     subCategory: "Chicken Fried Momos",
     price: 89,
@@ -76,18 +79,18 @@ const MENU: MenuItem[] = [
     id: "fried_momos_10",
     name: "Chicken Fried Momos (10 pcs)",
     desc: "Full plate crispy fried momos 😈🥟",
-    img: "https://via.placeholder.com/700x450.png?text=Fried+Momos+10pcs",
+    img: "/images/food/tbk_chilly_chicken.png",
     category: "Momos",
     subCategory: "Chicken Fried Momos",
     price: 169,
   },
 
-  // Main Course: Chicken Chukan
+  // ---------------- Main Course : Chicken Chukan ----------------
   {
     id: "chicken_3pcs",
     name: "Chicken Curry (3 Piece)",
     desc: "Perfect mini curry for 1-2 people 🍗",
-    img: "https://via.placeholder.com/700x450.png?text=Chicken+3pcs",
+    img: "/images/food/tbk_Bihari-Style-Chicken-Curry.jpg",
     category: "Main Course",
     subCategory: "Chicken Chukan",
     price: 199,
@@ -97,7 +100,7 @@ const MENU: MenuItem[] = [
     id: "chicken_500",
     name: "Chicken Curry (500 Gms)",
     desc: "Family portion chicken curry ❤️",
-    img: "https://via.placeholder.com/700x450.png?text=Chicken+500gm",
+    img: "/images/food/tbk_Bihari-Style-Chicken-Curry.jpg",
     category: "Main Course",
     subCategory: "Chicken Chukan",
     price: 349,
@@ -107,19 +110,19 @@ const MENU: MenuItem[] = [
     id: "chicken_1kg",
     name: "Chicken Curry (1 KG)",
     desc: "Big Holi party pack chicken curry 🔥",
-    img: "https://via.placeholder.com/700x450.png?text=Chicken+1KG",
+    img: "/images/food/tbk_Bihari-Style-Chicken-Curry.jpg",
     category: "Main Course",
     subCategory: "Chicken Chukan",
     price: 649,
     isCurry: true,
   },
 
-  // MuttonChi
+  // ---------------- Main Course : MuttonChi ----------------
   {
     id: "mutton_500",
     name: "Mutton Curry (500 Gm)",
-    desc: "Slow cooked mutton curry 💣🔥",
-    img: "https://via.placeholder.com/700x450.png?text=Mutton+500gm",
+    desc: "Slow cooked Champaran style mutton curry 💣🔥",
+    img: "/images/food/tbk_champaran_mutton.png",
     category: "Main Course",
     subCategory: "MuttonChi",
     price: 749,
@@ -128,20 +131,20 @@ const MENU: MenuItem[] = [
   {
     id: "mutton_1kg",
     name: "Mutton Curry (1 KG)",
-    desc: "Full party mutton pack 😈",
-    img: "https://via.placeholder.com/700x450.png?text=Mutton+1KG",
+    desc: "Full Holi party mutton pack 😈",
+    img: "/images/food/tbk_champaran_mutton.png",
     category: "Main Course",
     subCategory: "MuttonChi",
     price: 1449,
     isCurry: true,
   },
 
-  // Eggsclusive
+  // ---------------- Main Course : Eggsclusive ----------------
   {
     id: "egg_3pcs",
     name: "Egg Curry (3 Piece)",
-    desc: "Budget egg curry with spicy gravy 🥚🔥",
-    img: "https://via.placeholder.com/700x450.png?text=Egg+3pcs",
+    desc: "Egg masala curry for lunch or dinner 🥚🔥",
+    img: "/images/food/tbk_Egg-Masala-Curry3.webp",
     category: "Main Course",
     subCategory: "Eggsclusive",
     price: 109,
@@ -151,8 +154,8 @@ const MENU: MenuItem[] = [
   {
     id: "egg_6pcs",
     name: "Egg Curry (6 Piece)",
-    desc: "Egg curry for true egg lovers 😍🥚",
-    img: "https://via.placeholder.com/700x450.png?text=Egg+6pcs",
+    desc: "Full egg curry pack for egg lovers 😍🥚",
+    img: "/images/food/tbk_egg_curry6.png",
     category: "Main Course",
     subCategory: "Eggsclusive",
     price: 209,
@@ -322,12 +325,9 @@ export default function OrderPage() {
     return text.trim() || "No slot allocation provided.";
   };
 
-  const handleOrderNow = () => {
-    if (selectedItems.length === 0) return alert("Please select at least 1 item 😄");
-    setShowDeliveryPopup(true);
-  };
-
   const confirmAndSendOrder = () => {
+    if (selectedItems.length === 0) return alert("Please select at least 1 item 😄");
+
     if (deliveryMode === "slots") {
       if (!eligibleForSlots) {
         alert("Custom slots available only if cart > ₹999 OR total quantity >= 4.");
@@ -413,13 +413,21 @@ The Bhaiyu's Kitchen 🕴️`;
       {/* Header */}
       <div className="sticky top-0 z-50 backdrop-blur-md bg-white/75 border-b border-orange-200">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-          <div>
-            <h1 className="text-xl md:text-3xl font-extrabold text-orange-800">
-              The Bhaiyu&apos;s Kitchen Holi Specials 🕴️
-            </h1>
-            <p className="text-xs md:text-sm text-gray-800 font-bold">
-              📅 Delivery Date: 4th March | Pre-orders Only
-            </p>
+          <div className="flex items-center gap-3">
+            <img
+              src="/images/tbk_logo.png"
+              alt="The Bhaiyu's Kitchen Logo"
+              className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-yellow-300 shadow-md"
+            />
+
+            <div>
+              <h1 className="text-xl md:text-3xl font-extrabold text-orange-800">
+                The Bhaiyu&apos;s Kitchen Holi Specials 🕴️
+              </h1>
+              <p className="text-xs md:text-sm text-gray-800 font-bold">
+                📅 Delivery Date: 4th March | Pre-orders Only
+              </p>
+            </div>
           </div>
 
           <button
@@ -455,7 +463,7 @@ The Bhaiyu's Kitchen 🕴️`;
                           key={item.id}
                           className="rounded-3xl border border-gray-200 bg-white shadow-sm overflow-hidden"
                         >
-                          <img src={item.img} alt={item.name} className="w-full h-40 object-cover" />
+                          <img src={item.img} alt={item.name} className="w-full h-44 object-cover" />
 
                           <div className="p-4">
                             <p className="font-extrabold text-gray-900">{item.name}</p>
@@ -535,55 +543,6 @@ The Bhaiyu's Kitchen 🕴️`;
               ))}
             </div>
           ))}
-
-          {/* YAARON KE SAATH */}
-          <div className="bg-white/85 backdrop-blur-md rounded-3xl border border-orange-200 shadow-xl p-6">
-            <h2 className="text-2xl font-extrabold text-pink-600">🍻 Yaaron Ke Saath</h2>
-            <p className="mt-2 text-sm font-semibold text-gray-800">
-              Ready-made Holi party packages. Order once & chill 😎🌸
-            </p>
-
-            <div className="mt-5 grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="bg-gradient-to-br from-yellow-100 via-orange-100 to-pink-100 border border-orange-200 rounded-3xl p-5 shadow-md">
-                <h3 className="text-lg font-extrabold text-gray-900">Package 1</h3>
-                <p className="text-sm font-bold text-gray-700 mt-1">₹2499</p>
-                <button
-                  onClick={() =>
-                    setQty({
-                      chilli_chicken: 2,
-                      chicken_pakoda: 2,
-                      steam_momos_10: 2,
-                      chicken_500: 2,
-                      egg_6pcs: 1,
-                    })
-                  }
-                  className="mt-4 w-full bg-green-500 hover:bg-green-600 text-white font-extrabold py-3 rounded-3xl"
-                >
-                  Select Package 1
-                </button>
-              </div>
-
-              <div className="bg-gradient-to-br from-pink-100 via-purple-100 to-orange-100 border border-orange-200 rounded-3xl p-5 shadow-md">
-                <h3 className="text-lg font-extrabold text-gray-900">Package 2</h3>
-                <p className="text-sm font-bold text-gray-700 mt-1">₹3499</p>
-                <button
-                  onClick={() =>
-                    setQty({
-                      chilli_chicken: 3,
-                      chicken_pakoda: 3,
-                      fried_momos_10: 3,
-                      chicken_1kg: 1,
-                      mutton_500: 1,
-                      egg_6pcs: 2,
-                    })
-                  }
-                  className="mt-4 w-full bg-green-500 hover:bg-green-600 text-white font-extrabold py-3 rounded-3xl"
-                >
-                  Select Package 2
-                </button>
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Checkout */}
@@ -623,7 +582,7 @@ The Bhaiyu's Kitchen 🕴️`;
             </div>
 
             <button
-              onClick={handleOrderNow}
+              onClick={() => setShowDeliveryPopup(true)}
               className="mt-6 w-full bg-green-500 hover:bg-green-600 text-white font-extrabold py-4 rounded-3xl text-lg shadow-lg"
             >
               📲 Order Now
