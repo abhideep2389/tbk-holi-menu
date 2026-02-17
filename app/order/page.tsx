@@ -16,7 +16,6 @@ type MenuItem = {
 };
 
 const MENU: MenuItem[] = [
-  // --- Chinese Starters
   {
     id: "chilli_chicken",
     name: "Chilli Chicken (Boneless)",
@@ -35,8 +34,6 @@ const MENU: MenuItem[] = [
     subCategory: "Chinese Starters",
     price: 159,
   },
-
-  // --- Indian Starters
   {
     id: "tandoori_chicken",
     name: "Tandoori Chicken",
@@ -47,7 +44,7 @@ const MENU: MenuItem[] = [
     price: 299,
   },
 
-  // --- Momos
+  // Momos
   {
     id: "steam_momos_5",
     name: "Chicken Steam Momos (5 pcs)",
@@ -85,7 +82,7 @@ const MENU: MenuItem[] = [
     price: 169,
   },
 
-  // --- Main Course: Chicken Chukan
+  // Main Course: Chicken Chukan
   {
     id: "chicken_3pcs",
     name: "Chicken Curry (3 Piece)",
@@ -117,7 +114,7 @@ const MENU: MenuItem[] = [
     isCurry: true,
   },
 
-  // --- Main Course: MuttonChi
+  // MuttonChi
   {
     id: "mutton_500",
     name: "Mutton Curry (500 Gm)",
@@ -139,7 +136,7 @@ const MENU: MenuItem[] = [
     isCurry: true,
   },
 
-  // --- Main Course: Eggsclusive
+  // Eggsclusive
   {
     id: "egg_3pcs",
     name: "Egg Curry (3 Piece)",
@@ -186,7 +183,6 @@ export default function OrderPage() {
     { time: string; allocations: Record<string, number> }[]
   >([{ time: "", allocations: {} }]);
 
-  // My Holi Package form
   const [peopleCount, setPeopleCount] = useState("");
   const [packageType, setPackageType] = useState<"Starters+Lunch" | "Starters+Dinner">(
     "Starters+Lunch"
@@ -207,7 +203,6 @@ export default function OrderPage() {
     setCustomer({ name, phone, society, block, flat });
   }, [router]);
 
-  // Auto-save edited phone/society
   useEffect(() => {
     if (customer.phone) localStorage.setItem("bhaiyu_phone", customer.phone);
     if (customer.society) localStorage.setItem("bhaiyu_society", customer.society);
@@ -233,11 +228,7 @@ export default function OrderPage() {
   const selectedItems = useMemo(() => {
     return MENU.map((item) => {
       const q = qty[item.id] || 0;
-      return {
-        ...item,
-        qty: q,
-        total: q * item.price,
-      };
+      return { ...item, qty: q, total: q * item.price };
     }).filter((x) => x.qty > 0);
   }, [qty]);
 
@@ -306,9 +297,7 @@ export default function OrderPage() {
     }
 
     for (const slot of slots) {
-      if (!slot.time.trim()) {
-        return "Please select time for all slots 🕒";
-      }
+      if (!slot.time.trim()) return "Please select time for all slots 🕒";
     }
 
     return null;
@@ -322,9 +311,7 @@ export default function OrderPage() {
 
       selectedItems.forEach((item) => {
         const q = slot.allocations[item.id] || 0;
-        if (q > 0) {
-          slotItems.push(`- ${item.name} x${q}`);
-        }
+        if (q > 0) slotItems.push(`- ${item.name} x${q}`);
       });
 
       if (slotItems.length > 0) {
@@ -336,10 +323,7 @@ export default function OrderPage() {
   };
 
   const handleOrderNow = () => {
-    if (selectedItems.length === 0) {
-      alert("Please select at least 1 item 😄");
-      return;
-    }
+    if (selectedItems.length === 0) return alert("Please select at least 1 item 😄");
     setShowDeliveryPopup(true);
   };
 
@@ -401,10 +385,7 @@ The Bhaiyu's Kitchen 🕴️`;
   };
 
   const sendMyHoliPackage = () => {
-    if (!peopleCount.trim()) {
-      alert("Enter number of people 😄");
-      return;
-    }
+    if (!peopleCount.trim()) return alert("Enter number of people 😄");
 
     const msg = `🌸 MY HOLI PACKAGE REQUEST 🌸
 📅 Delivery Date: 4th March
@@ -529,7 +510,7 @@ The Bhaiyu's Kitchen 🕴️`;
                                   −
                                 </button>
 
-                                <div className="w-10 text-center font-extrabold text-gray-900">
+                                <div className="w-12 text-center font-extrabold text-xl text-black bg-yellow-100 border border-yellow-300 rounded-xl py-1">
                                   {q}
                                 </div>
 
@@ -557,9 +538,7 @@ The Bhaiyu's Kitchen 🕴️`;
 
           {/* YAARON KE SAATH */}
           <div className="bg-white/85 backdrop-blur-md rounded-3xl border border-orange-200 shadow-xl p-6">
-            <h2 className="text-2xl font-extrabold text-pink-600">
-              🍻 Yaaron Ke Saath
-            </h2>
+            <h2 className="text-2xl font-extrabold text-pink-600">🍻 Yaaron Ke Saath</h2>
             <p className="mt-2 text-sm font-semibold text-gray-800">
               Ready-made Holi party packages. Order once & chill 😎🌸
             </p>
@@ -655,7 +634,7 @@ The Bhaiyu's Kitchen 🕴️`;
             </div>
           </div>
 
-          {/* Editable Customer Info */}
+          {/* Customer Info */}
           <div className="bg-white/90 backdrop-blur-md rounded-3xl shadow-lg p-5 border border-orange-200">
             <h2 className="text-lg font-extrabold text-gray-900">👤 Customer Info</h2>
 
@@ -691,12 +670,9 @@ The Bhaiyu's Kitchen 🕴️`;
             </div>
           </div>
 
-          {/* My Holi Package Form */}
+          {/* My Holi Package */}
           <div className="bg-white/90 backdrop-blur-md rounded-3xl shadow-lg p-5 border border-orange-200">
             <h2 className="text-lg font-extrabold text-pink-600">🎁 My Holi Package</h2>
-            <p className="text-xs text-gray-700 font-semibold mt-1">
-              Not sure what to order? Just tell us your plan 😎
-            </p>
 
             <input
               value={peopleCount}
@@ -729,7 +705,15 @@ The Bhaiyu's Kitchen 🕴️`;
       {/* DELIVERY POPUP */}
       {showDeliveryPopup && (
         <div className="fixed inset-0 z-[999] bg-black/50 flex items-center justify-center px-4">
-          <div className="w-full max-w-2xl bg-white rounded-3xl shadow-2xl p-6 border border-orange-200">
+          <div className="w-full max-w-2xl bg-white rounded-3xl shadow-2xl p-6 border border-orange-200 max-h-[90vh] overflow-y-auto relative">
+            {/* Close button */}
+            <button
+              onClick={() => setShowDeliveryPopup(false)}
+              className="absolute top-4 right-4 w-10 h-10 rounded-full bg-red-500 hover:bg-red-600 text-white font-extrabold text-lg"
+            >
+              ✕
+            </button>
+
             <h2 className="text-xl font-extrabold text-orange-700">
               🚚 Choose Delivery Option
             </h2>
@@ -742,11 +726,9 @@ The Bhaiyu's Kitchen 🕴️`;
                   checked={deliveryMode === "single"}
                   onChange={() => setDeliveryMode("single")}
                 />
-                <div>
-                  <p className="font-extrabold text-gray-800">
-                    All items delivered at same time
-                  </p>
-                </div>
+                <p className="font-extrabold text-gray-800">
+                  All items delivered at same time
+                </p>
               </label>
 
               <label
@@ -777,7 +759,6 @@ The Bhaiyu's Kitchen 🕴️`;
               </label>
             </div>
 
-            {/* SLOT UI */}
             {deliveryMode === "slots" && eligibleForSlots && (
               <div className="mt-6">
                 <h3 className="font-extrabold text-gray-800">
@@ -831,7 +812,7 @@ The Bhaiyu's Kitchen 🕴️`;
                                   −
                                 </button>
 
-                                <div className="w-10 text-center font-extrabold">
+                                <div className="w-12 text-center font-extrabold text-lg text-black bg-yellow-100 border border-yellow-300 rounded-xl py-1">
                                   {allocated}
                                 </div>
 

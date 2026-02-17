@@ -44,7 +44,7 @@ export default function HomePage() {
         style={{ backgroundImage: "url('/images/tbk_homepage_background.jpg')" }}
       ></div>
 
-      {/* Overlay for readability */}
+      {/* Overlay */}
       <div className="absolute inset-0 bg-black/20"></div>
 
       {/* Holi blobs */}
